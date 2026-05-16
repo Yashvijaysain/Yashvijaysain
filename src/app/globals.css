@@ -2,23 +2,64 @@
 
 @theme {
   --font-sans: var(--font-inter);
+  --font-kanit: var(--font-kanit);
 }
 
 @layer base {
   :root {
-    --background: #121212;
-    --foreground: #ffffff;
+    --background: #0C0C0C;
+    --foreground: #D7E2EA;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body,
+  #root {
+    background-color: #0C0C0C;
+    font-family: var(--font-kanit), sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-kanit), var(--font-sans), sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .hero-heading {
+    background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
 }
 
 /* Hide scrollbar for a cleaner look */
@@ -26,7 +67,7 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: #0C0C0C;
 }
 ::-webkit-scrollbar-thumb {
   background: #333;
