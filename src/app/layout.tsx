@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Kanit } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,9 +7,15 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const kanit = Kanit({
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-kanit",
+});
+
 export const metadata: Metadata = {
-  title: "Creative Developer | Portfolio",
-  description: "A high-end scrollytelling personal portfolio website.",
+  title: "Jack -- 3D Creator",
+  description: "A 3D Creator portfolio landing page.",
 };
 
 export default function RootLayout({
@@ -19,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${kanit.variable} font-kanit bg-[#0C0C0C] text-[#D7E2EA] antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>
